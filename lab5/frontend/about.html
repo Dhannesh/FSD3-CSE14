@@ -1,0 +1,463 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us | BlueSync Wireless</title>
+    <!-- Google Fonts & Lucide Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+      :root {
+        --primary: #0284c7;
+        --primary-hover: #0369a1;
+        --primary-light: #e0f2fe;
+        --accent: #2563eb;
+        --dark: #0f172a;
+        --gray-100: #f8fafc;
+        --gray-200: #e2e8f0;
+        --gray-500: #64748b;
+        --white: #ffffff;
+        --radius: 14px;
+        --transition: all 0.25s ease;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Plus Jakarta Sans", sans-serif;
+      }
+
+      body {
+        background-color: var(--gray-100);
+        color: var(--dark);
+        line-height: 1.6;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 24px;
+      }
+
+      /* Navbar */
+      header {
+        position: sticky;
+        top: 0;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid var(--gray-200);
+        z-index: 1000;
+      }
+
+      .navbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 72px;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 1.4rem;
+        font-weight: 800;
+        color: var(--dark);
+        text-decoration: none;
+      }
+
+      .logo i {
+        color: var(--primary);
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 32px;
+        list-style: none;
+      }
+
+      .nav-links a {
+        text-decoration: none;
+        color: var(--gray-500);
+        font-weight: 500;
+        transition: var(--transition);
+      }
+
+      .nav-links a:hover,
+      .nav-links a.active {
+        color: var(--primary);
+      }
+
+      .nav-actions {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+      }
+
+      .icon-btn {
+        background: none;
+        border: none;
+        cursor: pointer;
+        color: var(--dark);
+        padding: 8px;
+        border-radius: 50%;
+        transition: var(--transition);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .icon-btn:hover {
+        background-color: var(--gray-200);
+      }
+
+      /* Hero / Page Header */
+      .page-header {
+        padding: 70px 0 50px;
+        text-align: center;
+        background: linear-gradient(180deg, #f0f9ff 0%, var(--gray-100) 100%);
+      }
+
+      .badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 6px 14px;
+        border-radius: 20px;
+        background: var(--primary-light);
+        color: var(--primary);
+        font-size: 0.85rem;
+        font-weight: 600;
+        margin-bottom: 16px;
+      }
+
+      .page-header h1 {
+        font-size: 2.8rem;
+        font-weight: 800;
+        margin-bottom: 16px;
+      }
+
+      .page-header h1 span {
+        color: var(--primary);
+      }
+
+      .page-header p {
+        max-width: 650px;
+        margin: 0 auto;
+        color: var(--gray-500);
+        font-size: 1.1rem;
+      }
+
+      /* Story Section */
+      .story-section {
+        padding: 60px 0;
+      }
+
+      .story-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 48px;
+        align-items: center;
+      }
+
+      .story-img img {
+        width: 100%;
+        border-radius: var(--radius);
+        box-shadow: 0 16px 30px -10px rgba(0, 0, 0, 0.1);
+      }
+
+      .story-content h2 {
+        font-size: 2rem;
+        font-weight: 800;
+        margin-bottom: 16px;
+      }
+
+      .story-content p {
+        color: var(--gray-500);
+        margin-bottom: 16px;
+      }
+
+      /* Values Grid */
+      .values-section {
+        padding: 40px 0 80px;
+      }
+
+      .values-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+      }
+
+      .value-card {
+        background: var(--white);
+        padding: 32px;
+        border-radius: var(--radius);
+        border: 1px solid var(--gray-200);
+        transition: var(--transition);
+      }
+
+      .value-card:hover {
+        transform: translateY(-5px);
+        border-color: #cbd5e1;
+      }
+
+      .value-icon {
+        width: 52px;
+        height: 52px;
+        background: var(--primary-light);
+        color: var(--primary);
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 20px;
+      }
+
+      .value-card h3 {
+        font-size: 1.2rem;
+        font-weight: 700;
+        margin-bottom: 10px;
+      }
+
+      .value-card p {
+        font-size: 0.95rem;
+        color: var(--gray-500);
+      }
+
+      /* Footer */
+      footer {
+        background: var(--dark);
+        color: var(--white);
+        padding: 60px 0 24px;
+      }
+
+      .footer-grid {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr 1fr;
+        gap: 40px;
+        margin-bottom: 40px;
+      }
+
+      .footer-logo {
+        font-size: 1.3rem;
+        font-weight: 800;
+        color: var(--white);
+        margin-bottom: 12px;
+        display: inline-block;
+      }
+
+      .footer-text {
+        color: var(--gray-500);
+        font-size: 0.9rem;
+        max-width: 320px;
+      }
+
+      .footer-col h5 {
+        font-size: 1rem;
+        font-weight: 600;
+        margin-bottom: 16px;
+      }
+
+      .footer-col ul {
+        list-style: none;
+      }
+
+      .footer-col ul li {
+        margin-bottom: 10px;
+      }
+
+      .footer-col ul li a {
+        color: var(--gray-500);
+        text-decoration: none;
+        font-size: 0.9rem;
+        transition: var(--transition);
+      }
+
+      .footer-col ul li a:hover {
+        color: var(--white);
+      }
+
+      .footer-bottom {
+        border-top: 1px solid #1e293b;
+        padding-top: 24px;
+        text-align: center;
+        font-size: 0.85rem;
+        color: var(--gray-500);
+      }
+
+      @media (max-width: 900px) {
+        .story-grid {
+          grid-template-columns: 1fr;
+        }
+        .values-grid {
+          grid-template-columns: 1fr;
+        }
+        .footer-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+
+      @media (max-width: 600px) {
+        .nav-links {
+          display: none;
+        }
+        .footer-grid {
+          grid-template-columns: 1fr;
+        }
+        .page-header h1 {
+          font-size: 2.1rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="container navbar">
+        <a href="index.html" class="logo">
+          <i data-lucide="bluetooth"></i> BlueSync
+        </a>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html" class="active">About Us</a></li>
+          <li><a href="enquiry.html">Enquiries</a></li>
+        </ul>
+        <div class="nav-actions">
+          <button class="icon-btn" aria-label="Search">
+            <i data-lucide="search"></i>
+          </button>
+          <button class="icon-btn" aria-label="Cart">
+            <i data-lucide="shopping-bag"></i>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Header Banner -->
+    <section class="page-header">
+      <div class="container">
+        <span class="badge"
+          ><i data-lucide="award" size="14"></i> Engineered for
+          Audiophiles</span
+        >
+        <h1>Redefining <span>Wireless Freedom</span></h1>
+        <p>
+          We blend low-latency Bluetooth protocols, high-grade acoustic
+          materials, and refined design to remove friction between you and your
+          sound.
+        </p>
+      </div>
+    </section>
+
+    <!-- Story Section -->
+    <section class="story-section">
+      <div class="container story-grid">
+        <div class="story-img">
+          <img
+            src="https://images.unsplash.com/photo-1598331668826-20cecc596b86?w=700&auto=format&fit=crop&q=80"
+            alt="Audio Engineering"
+          />
+        </div>
+        <div class="story-content">
+          <h2>Sound Crafted Without Compromise</h2>
+          <p>
+            Founded in 2021, BlueSync was born out of frustration with unstable
+            connections, high audio latency, and bloated software. We set out to
+            design hardware that pairs instantly, sounds balanced, and lasts
+            throughout your week.
+          </p>
+          <p>
+            Every piece of hardware in our catalog goes through acoustic
+            laboratory testing, drop-durability analysis, and Bluetooth SIG
+            certifications to bring you effortless connectivity.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Core Values -->
+    <section class="values-section">
+      <div class="container">
+        <div class="values-grid">
+          <div class="value-card">
+            <div class="value-icon"><i data-lucide="cpu"></i></div>
+            <h3>Next-Gen Codecs</h3>
+            <p>
+              Support for aptX Adaptive, LDAC, and LC3 codecs ensures
+              bit-for-bit high-resolution wireless streaming.
+            </p>
+          </div>
+          <div class="value-card">
+            <div class="value-icon"><i data-lucide="leaf"></i></div>
+            <h3>Eco-Friendly Design</h3>
+            <p>
+              Constructed with 70% post-consumer recycled aluminum and 100%
+              plastic-free packaging.
+            </p>
+          </div>
+          <div class="value-card">
+            <div class="value-icon"><i data-lucide="life-buoy"></i></div>
+            <h3>Lifetime Support</h3>
+            <p>
+              Direct firmware access, cross-platform mobile apps, and guaranteed
+              spare components for repairability.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container footer-grid">
+        <div>
+          <span class="footer-logo">BlueSync</span>
+          <p class="footer-text">
+            Designing the next generation of high-fidelity wireless audio
+            peripherals and seamless connected devices.
+          </p>
+        </div>
+        <div class="footer-col">
+          <h5>Navigation</h5>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="enquiry.html">Enquiry</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Support</h5>
+          <ul>
+            <li><a href="#">Pairing Guides</a></li>
+            <li><a href="#">Firmware Updates</a></li>
+            <li><a href="#">Warranty & Repair</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Contact</h5>
+          <ul>
+            <li>
+              <a href="mailto:support@bluesync.io">support@bluesync.io</a>
+            </li>
+            <li><a href="#">San Francisco, CA</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 BlueSync Electronics Inc. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script>
+      lucide.createIcons();
+    </script>
+  </body>
+</html>
