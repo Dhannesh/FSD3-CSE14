@@ -14,8 +14,6 @@ const b2 = {
 };
 
 function Book(props) {
-  console.log(props);
-
   return (
     <div>
       <img src={props.book.picUrl} alt={props.book.bname} />
