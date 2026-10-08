@@ -1,13 +1,13 @@
 const MyButton = () => {
-    const handleClick = ()=>{
-        alert('Button Clicked')
-    }
+  const handleClick = () => {
+    alert("Button Clicked");
+  };
 
-  return <button 
-  style={{ height: "40px", width: "100px" }} 
-  onClick={handleClick}>
-    Click Me
-</button>;
+  return (
+    <button className="bg-black text-white rounded p-3" onClick={handleClick}>
+      Click Me
+    </button>
+  );
 };
 
 const Event = () => {
